@@ -23,8 +23,6 @@ import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
-import org.bukkit.event.HandlerList;
-import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
@@ -196,7 +194,7 @@ public class SpiritBolt extends AvatarAbility implements AddonAbility {
 
 		for (int i = 0; i < 360; i += 8) {
 			Vector circle = GeneralMethods.getOrthogonalVector(l.getDirection(), i, length);
-			player.getWorld().spawnParticle(Particle.DRAGON_BREATH, l.clone().add(GeneralMethods.getOrthogonalVector(l.getDirection(), i, 0.2)), 0, circle.getX(), circle.getY(), circle.getZ(), 0.08);
+			player.getWorld().spawnParticle(Particle.DRAGON_BREATH, l.clone().add(GeneralMethods.getOrthogonalVector(l.getDirection(), i, 0.2)), 0, circle.getX(), circle.getY(), circle.getZ(), 0.08, 1f);
 		}
 		player.getWorld().playSound(player.getLocation(), Sound.BLOCK_BEACON_DEACTIVATE, 0.5F, 0);
 
